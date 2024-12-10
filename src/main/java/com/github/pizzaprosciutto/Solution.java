@@ -1,6 +1,7 @@
 package com.github.pizzaprosciutto;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -52,6 +53,23 @@ public class Solution {
         } catch (Exception e) {
             return null;
         }
+    }
 
+    /**
+     * 1 Month Preparation Kit Week 1, Sparse Arrays
+     * 
+     * The function must return an array of integers representing the frequency of
+     * occurrence of each query string in strings.
+     * 
+     * @param strings an array of strings to search
+     * @param queries an array of query strings
+     * @return an array of results for each query
+     */
+    public static List<Integer> matchingStrings(List<String> strings, List<String> queries) {
+        List<Integer> results = new ArrayList<>();
+        for (String query : queries) {
+            results.add((int) strings.stream().filter(s -> s.equals(query)).count());
+        }
+        return results;
     }
 }

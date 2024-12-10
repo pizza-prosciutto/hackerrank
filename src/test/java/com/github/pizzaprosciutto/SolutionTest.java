@@ -1,5 +1,6 @@
 package com.github.pizzaprosciutto;
 
+import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 
 import java.io.ByteArrayOutputStream;
@@ -46,6 +47,15 @@ public class SolutionTest {
         String expected = "19:05:45";
         String converted = Solution.timeConversion("07:05:45PM");
         assertEquals(expected, converted);
+    }
+
+    @Test
+    public void matchingStrings() {
+        List<String> strings = List.of("aba", "baba", "aba", "xzxb");
+        List<String> queries = List.of("aba", "xzxb", "ab");
+        List<Integer> expected = List.of(2, 1, 0);
+        List<Integer> result = Solution.matchingStrings(strings, queries);
+        assertArrayEquals(expected.toArray(), result.toArray());
     }
 
 }
