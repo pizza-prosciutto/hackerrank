@@ -1,6 +1,8 @@
 {
     "name": "hackerrank",
-    "image": "mcr.microsoft.com/devcontainers/java:dev-17",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
     "customizations": {
         "vscode": {
             "extensions": [
@@ -8,8 +10,5 @@
                 "redhat.vscode-xml"
             ]
         }
-    },
-    "features": {
-        "ghcr.io/devcontainers-extra/features/maven-sdkman:2": {}
     }
 }
