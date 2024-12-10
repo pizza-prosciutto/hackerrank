@@ -72,4 +72,33 @@ public class Solution {
         }
         return results;
     }
+
+    /**
+     * 1 Month Preparation Kit Week 1, Lonely Integer
+     * 
+     * Given an array of integers, where all elements but one occur twice, find the
+     * unique element.
+     * 
+     * @param a an array of integers
+     * @return the element that occurs only once
+     */
+    public static int lonelyinteger(List<Integer> a) {
+        List<Integer> list = new ArrayList<>(a);
+        list.sort((x, y) -> x.compareTo(y));
+        int lonelyInteger = list.get(0);
+        int count = 1;
+        for (int i = 1; i < list.size(); i++) {
+            int element = list.get(i);
+            if ((lonelyInteger != element) && (count == 1)) {
+                return lonelyInteger;
+            } else if (lonelyInteger != element) {
+                lonelyInteger = element;
+                count = 1;
+            } else {
+                count++;
+            }
+        }
+        return list.get(list.size() - 1);
+    }
+
 }

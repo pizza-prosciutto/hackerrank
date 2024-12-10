@@ -58,4 +58,12 @@ public class SolutionTest {
         assertArrayEquals(expected.toArray(), result.toArray());
     }
 
+    @Test
+    public void lonelyintegerTest() {
+        List<Integer> testList = List.of(1, 2, 3, 4, 3, 2, 1);
+        Integer expected = 4;
+        Integer result = Solution.lonelyinteger(testList);
+        assertEquals(expected, result);
+    }
+
 }
