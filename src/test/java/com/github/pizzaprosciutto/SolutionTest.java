@@ -66,4 +66,12 @@ public class SolutionTest {
         assertEquals(expected, result);
     }
 
+    @Test
+    public void flippingBitsTest() {
+        long expected = 4294967294L;
+        long result = Solution.flippingBits(1);
+        System.out.println(Integer.toBinaryString((int) result));
+        assertEquals(expected, result);
+    }
+
 }

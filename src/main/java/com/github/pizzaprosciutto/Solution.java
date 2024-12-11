@@ -101,4 +101,16 @@ public class Solution {
         return list.get(list.size() - 1);
     }
 
+    /**
+     * 1 Month Preparation Kit Week 1, Flipping bits
+     * 
+     * Flip all the bits and return the result as an unsigned integer.
+     * 
+     * @param n an integer
+     * @return the unsigned decimal integer result
+     */
+    public static long flippingBits(long n) {
+        return n & 0xFFFFFFFFL ^ 0xFFFFFFFFL;
+    }
+
 }
