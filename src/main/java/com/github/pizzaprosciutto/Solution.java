@@ -182,4 +182,31 @@ public class Solution {
         return letters.values().stream().filter(v -> v.equals(0)).count() == 0 ? "pangram" : "not pangram";
     }
 
+    /**
+     * 1 Month Preparation Kit Week 1, Permuting Two Arrays
+     * 
+     * There are two n-element arrays of integers, A and B. Permute them into some
+     * A' and B' such that the relation A'[i] + B'[i] >= k holds for all
+     * i where 0 <= i <= n.
+     * 
+     * @param k an integer
+     * @param A an array of integers
+     * @param B an array of integers
+     * @return either YES or NO
+     */
+    public static String twoArrays(int k, List<Integer> A, List<Integer> B) {
+        B.sort((x, y) -> x.compareTo(y));
+        List<Integer> diffs = A.stream().map(a -> k - a).sorted().collect(Collectors.toList());
+        for (Integer b : B) {
+            for (Integer diff : diffs) {
+                if (diff > b) {
+                    return "NO";
+                }
+                diffs.remove(diff);
+                break;
+            }
+        }
+        return "YES";
+    }
+
 }

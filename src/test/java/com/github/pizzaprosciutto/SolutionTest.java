@@ -111,4 +111,17 @@ public class SolutionTest {
         assertEquals("not pangram", result);
     }
 
+    @Test
+    public void twoArrays() {
+        List<Integer> A = Arrays.asList(2, 1, 3);
+        List<Integer> B = Arrays.asList(7, 8, 9);
+        String result = Solution.twoArrays(10, A, B);
+        assertEquals("YES", result);
+
+        A = Arrays.asList(1, 2, 2, 1);
+        B = Arrays.asList(3, 3, 3, 4);
+        result = Solution.twoArrays(5, A, B);
+        assertEquals("NO", result);
+    }
+
 }
