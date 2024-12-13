@@ -139,4 +139,10 @@ public class SolutionTest {
         assertEquals(1, result);
     }
 
+    @Test
+    public void stringsXORTest() {
+        String result = Solution.stringsXOR("10101", "00101");
+        assertEquals("10000", result);
+    }
+
 }

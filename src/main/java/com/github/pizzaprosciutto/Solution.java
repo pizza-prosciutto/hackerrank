@@ -235,4 +235,25 @@ public class Solution {
         return ways;
     }
 
+    /**
+     * 1 Month Preparation Kit Week 1, XOR Strings 2
+     * 
+     * Given two strings consisting of digits 0 and 1 only, find the XOR of the two
+     * strings.
+     * 
+     * * Note: You can modify at most three lines in the given code and you cannot
+     * * add or remove lines to the code.
+     */
+    public static String stringsXOR(String s, String t) {
+        String res = new String("");
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == t.charAt(i))
+                res += "0";
+            else
+                res += "1";
+        }
+
+        return res;
+    }
+
 }
