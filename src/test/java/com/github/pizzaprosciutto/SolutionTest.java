@@ -74,4 +74,15 @@ public class SolutionTest {
         assertEquals(expected, result);
     }
 
+    @Test
+    public void diagonalDifferenceTest() {
+        List<List<Integer>> testList = List.of(
+                List.of(11, 2, 4),
+                List.of(4, 5, 6),
+                List.of(10, 8, -12));
+        Integer expected = 15;
+        Integer result = Solution.diagonalDifference(testList);
+        assertEquals(expected, result);
+    }
+
 }

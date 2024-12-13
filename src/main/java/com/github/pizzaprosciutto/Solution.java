@@ -113,4 +113,24 @@ public class Solution {
         return n & 0xFFFFFFFFL ^ 0xFFFFFFFFL;
     }
 
+    /**
+     * 1 Month Preparation Kit Week 1, Diagonal Difference
+     * 
+     * Given a square matrix, calculate the absolute difference between the sums of
+     * its diagonals.
+     * 
+     * @param arr an array of integers
+     * @return the absolute diagonal difference
+     */
+    public static int diagonalDifference(List<List<Integer>> arr) {
+        Integer sumLeftToRight = 0, sumRightToLeft = 0;
+        for (int i = 0; i < arr.get(0).size(); i++) {
+            List<Integer> subList = arr.get(i);
+            sumLeftToRight += subList.get(i);
+            sumRightToLeft += subList.get(subList.size() - i - 1);
+        }
+        int diff = sumLeftToRight - sumRightToLeft;
+        return Math.abs(diff);
+    }
+
 }
