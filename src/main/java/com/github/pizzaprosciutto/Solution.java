@@ -209,4 +209,30 @@ public class Solution {
         return "YES";
     }
 
+    /**
+     * 1 Month Preparation Kit Week 1, Subarray Division 1
+     * 
+     * Lily decides to share a contiguous segment of the bar selected such that:
+     * * The length of the segment matches Ron's birth month, and,
+     * * The sum of the integers on the squares is equal to his birth day.
+     * Determine how many ways she can divide the chocolate.
+     * 
+     * @param s the numbers on each of the squares of chocolate
+     * @param d Ron's birth day
+     * @param m Ron's birth month
+     * @return the number of ways the bar can be divided
+     */
+    public static int birthday(List<Integer> s, int d, int m) {
+        int ways = 0;
+        for (int i = 0; i <= s.size() - m; i++) {
+            int sum = 0;
+            for (int j = 0; j < m; j++) {
+                sum += s.get(i + j);
+            }
+            if (sum == d)
+                ways += 1;
+        }
+        return ways;
+    }
+
 }

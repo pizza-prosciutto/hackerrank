@@ -124,4 +124,19 @@ public class SolutionTest {
         assertEquals("NO", result);
     }
 
+    @Test
+    public void birthdayTest() {
+        List<Integer> testInput = List.of(2, 2, 1, 3, 2);
+        int result = Solution.birthday(testInput, 4, 2);
+        assertEquals(2, result);
+
+        testInput = List.of(1, 2, 1, 3, 2);
+        result = Solution.birthday(testInput, 3, 2);
+        assertEquals(2, result);
+
+        testInput = List.of(4);
+        result = Solution.birthday(testInput, 4, 1);
+        assertEquals(1, result);
+    }
+
 }
