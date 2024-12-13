@@ -5,6 +5,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class Solution {
 
@@ -150,6 +153,33 @@ public class Solution {
             frequency.set(idx, frequency.get(idx) + 1);
         }
         return frequency;
+    }
+
+    /**
+     * 1 Month Preparation Kit Week 1, Panagrams
+     * 
+     * A pangram is a string that contains every letter of the alphabet. Given a
+     * sentence determine whether it is a pangram in the English alphabet. Ignore
+     * case. Return either pangram or not pangram as appropriate.
+     * 
+     * @param s a string to test
+     * @return either pangram or not pangram
+     */
+    public static String pangrams(String s) {
+        Map<Character, Integer> letters = IntStream.rangeClosed('a', 'z')
+                .mapToObj(c -> (char) c)
+                .collect(Collectors.toMap(c -> c, c -> 0));
+        for (int i = 0; i < s.length(); i++) {
+            Character c = s.charAt(i);
+            int v = Character.getNumericValue(c);
+            if ((Character.getNumericValue('A') <= v &&
+                    Character.getNumericValue('Z') >= v) ||
+                    (Character.getNumericValue('a') <= v &&
+                            Character.getNumericValue('z') >= v)) {
+                letters.replace(Character.toLowerCase(c), 1);
+            }
+        }
+        return letters.values().stream().filter(v -> v.equals(0)).count() == 0 ? "pangram" : "not pangram";
     }
 
 }

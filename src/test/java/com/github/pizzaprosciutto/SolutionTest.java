@@ -100,4 +100,15 @@ public class SolutionTest {
         assertArrayEquals(expected.toArray(), result.toArray());
     }
 
+    @Test
+    public void pangramsTest() {
+        String testInput = "We promptly judged antique ivory buckles for the next prize";
+        String result = Solution.pangrams(testInput);
+        assertEquals("pangram", result);
+
+        testInput = "We promptly judged antique ivory buckles for the prize";
+        result = Solution.pangrams(testInput);
+        assertEquals("not pangram", result);
+    }
+
 }
