@@ -2,6 +2,7 @@ package com.github.pizzaprosciutto;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
@@ -131,6 +132,24 @@ public class Solution {
         }
         int diff = sumLeftToRight - sumRightToLeft;
         return Math.abs(diff);
+    }
+
+    /**
+     * 1 Month Preparation Kit Week 1, Diagonal Difference
+     * 
+     * Given a list of integers, count and return the number of times each value
+     * appears as an array of integers.
+     * 
+     * @param arr an array of integers
+     * @return a frequency array
+     */
+    public static List<Integer> countingSort(List<Integer> arr) {
+        List<Integer> frequency = new ArrayList<>(Collections.nCopies(100, 0));
+        for (int i = 0; i < arr.size(); i++) {
+            int idx = arr.get(i);
+            frequency.set(idx, frequency.get(idx) + 1);
+        }
+        return frequency;
     }
 
 }
